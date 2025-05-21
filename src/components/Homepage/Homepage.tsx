@@ -1,7 +1,58 @@
+"use client";
+
+import { preBuiltTemplates } from "@/utility/mockdata";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Homepage = () => {
-  return <div className="p-4">Homepage</div>;
+  const router = useRouter();
+
+  const createBtnClickHandler = () => {
+    router.push("/create-prompt");
+  };
+
+  return (
+    <div className="p-4 flex flex-wrap gap-4">
+      <div className="flex justify-between w-full">
+        <div className="flex gap-4">
+          <button className="px-5 py-1 text-[14px] rounded cursor-pointer bg-gray-600 text-white">
+            Filter
+          </button>
+          <button className="px-5 py-1 text-[14px] rounded cursor-pointer bg-gray-600 text-white">
+            Sort
+          </button>
+        </div>
+
+        <div>
+          <button
+            className="px-5 py-1 text-[14px] rounded cursor-pointer bg-gray-900 text-white"
+            onClick={createBtnClickHandler}
+          >
+            Create +
+          </button>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-4 mt-10">
+        {preBuiltTemplates.map((template, templateIndex) => (
+          <div
+            key={templateIndex}
+            className="border border-black px-4 py-2 rounded md:w-[48%] lg:w-[30%]"
+          >
+            <p>{template}</p>
+            <div className="mt-4 mb-2 flex gap-4 float-right">
+              <button className="px-2 py-1 text-[12px] rounded cursor-pointer bg-blue-500 text-white">
+                Use prompt
+              </button>
+              <button className="px-2 py-1 border border-black text-[12px] rounded cursor-pointer">
+                Customize
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Homepage;
