@@ -8,9 +8,9 @@ interface DefaultLayoutProps {
 
 const DefaultLayout = ({ children }: DefaultLayoutProps) => {
   return (
-    <div className="border border-red-500 bg-blue-500">
+    <div className="flex w-full h-screen">
       <Sidebar />
-      <div>
+      <div className="w-full">
         <Header />
         {children}
       </div>
