@@ -2,7 +2,6 @@ import React from "react";
 import Dropdown from "../Dropdown/Dropdown";
 
 const CreatePrompt = () => {
-  //
   return (
     <div className="flex flex-col p-4">
       <div className="flex flex-col  w-[300px]">
