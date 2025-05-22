@@ -2,13 +2,35 @@
 
 import { preBuiltTemplates } from "@/utility/mockdata";
 import { useRouter } from "next/navigation";
-import React from "react";
+import { HeartIcon, HeartFilledIcon } from "@radix-ui/react-icons";
+import React, { useEffect, useState } from "react";
+
+interface ObjType {
+  [key: number]: boolean;
+}
 
 const Homepage = () => {
   const router = useRouter();
+  const [favourites, setFavourites] = useState<ObjType>({});
+
+  useEffect(() => {
+    let receivedObj = localStorage.getItem("favouritesArr") ?? "";
+
+    setFavourites(JSON.parse(receivedObj));
+  }, []);
 
   const createBtnClickHandler = () => {
     router.push("/create-prompt");
+  };
+
+  const favouriteClickHandler = (receivedIndex: number) => () => {
+    let tempFovourites = { ...favourites };
+
+    tempFovourites[receivedIndex] = !tempFovourites[receivedIndex];
+
+    setFavourites(tempFovourites);
+
+    localStorage.setItem("favouritesArr", JSON.stringify(tempFovourites));
   };
 
   return (
@@ -39,6 +61,12 @@ const Homepage = () => {
             key={templateIndex}
             className="border border-black px-4 py-2 rounded md:w-[48%] lg:w-[30%]"
           >
+            <div
+              className="wid-full flex justify-end cursor-pointer"
+              onClick={favouriteClickHandler(templateIndex)}
+            >
+              {favourites[templateIndex] ? <HeartFilledIcon /> : <HeartIcon />}
+            </div>
             <p>{template}</p>
             <div className="mt-4 mb-2 flex gap-4 float-right">
               <button className="px-2 py-1 text-[12px] rounded cursor-pointer bg-blue-500 text-white">
