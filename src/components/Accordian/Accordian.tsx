@@ -21,12 +21,12 @@ const Accordian = ({ optionsArr }: AccordianProps) => {
       collapsible
     >
       {optionsArr.map((el) => (
-        <AccordionItem className="text-white mb-8" value={el.id}>
+        <AccordionItem className="text-white mb-8" value={el.key}>
           <AccordionTrigger className="text-white flex justify-between items-center w-full">
-            {el.question}
+            {el.label}
             <ChevronDownIcon />
           </AccordionTrigger>
-          <AccordionContent className="mt-4">{el.answer}</AccordionContent>
+          <AccordionContent className="mt-4">{el.children}</AccordionContent>
         </AccordionItem>
       ))}
     </AccordionRadix.Root>
