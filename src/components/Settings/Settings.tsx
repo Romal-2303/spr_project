@@ -1,8 +1,25 @@
+"use client";
+
+import React, { useState } from "react";
 import { Switch } from "@radix-ui/themes";
-import React from "react";
 import V2_Button from "../V2_Button/V2_Button";
+import { Modal } from "antd";
 
 const Settings = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="flex flex-col p-4">
       <div className="flex items-center gap-2 text-[14px] cursor-pointer font-bold">
@@ -13,6 +30,7 @@ const Settings = () => {
         <V2_Button
           size="sm"
           customClassName="text-[14px] flex-1 px-3 py-1 rounded cursor-pointer bg-blue-500 text-white whitespace-nowrap"
+          onClick={showModal}
         >
           Import Template
         </V2_Button>
@@ -53,6 +71,27 @@ const Settings = () => {
         <V2_Button buttonStyle="success">Add to Cart</V2_Button>
         <V2_Button buttonStyle="outline">Buy Now</V2_Button>
       </div>
+
+      <Modal
+        title="Basic Modal"
+        closable={{ "aria-label": "Custom Close Button" }}
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
+
+      {/* <Modal
+        open={isModalOpen}
+        onOpenChange={() => setIsModalOpen((prevState) => !prevState)}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal> */}
     </div>
   );
 };
