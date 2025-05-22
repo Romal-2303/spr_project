@@ -4,6 +4,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { preBuiltTemplates } from "@/utility/mockdata";
 import { HeartIcon, HeartFilledIcon } from "@radix-ui/react-icons";
+import Button from "@/components/Button/Button";
 
 interface ObjType {
   [key: number]: boolean;
@@ -63,6 +64,21 @@ const Favourites = () => {
             )}
           </>
         ))}
+      </div>
+
+      <div className="flex gap-4 w-full mt-4">
+        <Button>Learn More</Button>
+        <Button>Get Started</Button>
+        <Button variant="success">Save</Button>
+        <Button variant="danger">Delete</Button>
+        <Button variant="warning">Update</Button>
+        <Button variant="success">Send</Button>
+        <Button variant="secondary" disabled={true}>
+          Not Allowed
+        </Button>
+        <Button variant="outline">Explore</Button>
+        <Button variant="outline">Read More</Button>
+        <Button variant="outline">View Details</Button>
       </div>
     </div>
   );

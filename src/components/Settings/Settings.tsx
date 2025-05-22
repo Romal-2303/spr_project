@@ -1,5 +1,6 @@
 import { Switch } from "@radix-ui/themes";
 import React from "react";
+import Button from "@/components/Button/Button";
 
 const Settings = () => {
   return (
@@ -20,6 +21,18 @@ const Settings = () => {
         <button className="mt-8 text-[14px] flex-1 px-6 py-2 rounded cursor-pointer bg-red-500 text-white">
           Reset App Data
         </button>
+      </div>
+
+      <div className="flex gap-4 w-full mt-4">
+        <Button>Register</Button>
+        <Button variant="success">Subscribe</Button>
+        <Button variant="success">Share</Button>
+        <Button variant="success">Follow</Button>
+        <Button variant="secondary">Unfollow</Button>
+        <Button variant="success">Like</Button>
+        <Button variant="success">Unlike</Button>
+        <Button variant="success">Add to Cart</Button>
+        <Button variant="outline">Buy Now</Button>
       </div>
     </div>
   );

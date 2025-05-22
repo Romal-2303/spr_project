@@ -10,7 +10,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
   return (
     <div className="flex w-full h-screen">
       <Sidebar />
-      <div className="w-full">
+      <div className="w-full overflow-y-scroll">
         <Header />
         {children}
       </div>

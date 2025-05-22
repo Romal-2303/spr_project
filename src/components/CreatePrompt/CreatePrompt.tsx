@@ -1,5 +1,6 @@
 import React from "react";
 import Dropdown from "../Dropdown/Dropdown";
+import Button from "@/components/Button/Button";
 
 const CreatePrompt = () => {
   return (
@@ -19,6 +20,20 @@ const CreatePrompt = () => {
         <button className="text-[14px] flex-1 px-3 py-1 rounded cursor-pointer border border-black hover:bg-black/10">
           Save Template
         </button>
+      </div>
+
+      <div className="flex gap-4 w-full mt-4">
+        <Button>Apply</Button>
+        <Button>Close</Button>
+        <Button>View All</Button>
+        <Button>More Info</Button>
+        <Button variant="secondary">Discover</Button>
+        <Button variant="secondary">Settings</Button>
+        <Button variant="outline">Launch</Button>
+        <Button variant="outline">Accept</Button>
+        <Button variant="danger">Decline</Button>
+        <Button variant="danger">Remove</Button>
+        <Button variant="danger">Cancel</Button>
       </div>
     </div>
   );
