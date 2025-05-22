@@ -1,6 +1,6 @@
 import React from "react";
 import V2_Button from "../V2_Button/V2_Button";
-import { Collapse } from "antd";
+import Accordian from "@/components/Accordian/Accordian";
 
 const text = `
   A dog is a type of domesticated animal.
@@ -30,7 +30,7 @@ const FrequentlyAskedQuestion = () => {
   return (
     <div className="p-4 flex flex-wrap gap-4">
       <div className="flex flex-col">
-        <Collapse items={items} defaultActiveKey={[1]} className="w-full" />
+        <Accordian optionsArr={items} />
       </div>
       <div className="flex flex-wrap gap-4 w-full mt-4">
         <V2_Button>Checkout</V2_Button>
