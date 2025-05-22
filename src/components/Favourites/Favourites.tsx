@@ -4,7 +4,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { preBuiltTemplates } from "@/utility/mockdata";
 import { HeartIcon, HeartFilledIcon } from "@radix-ui/react-icons";
-import Button from "@/components/Button/Button";
+import V2_Button from "../V2_Button/V2_Button";
 
 interface ObjType {
   [key: number]: boolean;
@@ -51,12 +51,12 @@ const Favourites = () => {
                 </div>
                 <p>{template}</p>
                 <div className="mt-4 mb-2 flex gap-4 float-right">
-                  <button className="px-2 py-1 text-[12px] rounded cursor-pointer bg-blue-500 text-white">
+                  <V2_Button customClassName="px-2 py-1 text-[12px] rounded cursor-pointer bg-blue-500 text-white">
                     Use prompt
-                  </button>
-                  <button className="px-2 py-1 border border-black text-[12px] rounded cursor-pointer">
+                  </V2_Button>
+                  <V2_Button customClassName="px-2 py-1 border border-black text-[12px] rounded cursor-pointer">
                     Customize
-                  </button>
+                  </V2_Button>
                 </div>
               </div>
             ) : (
@@ -66,19 +66,29 @@ const Favourites = () => {
         ))}
       </div>
 
-      <div className="flex gap-4 w-full mt-4">
-        <Button>Learn More</Button>
-        <Button>Get Started</Button>
-        <Button variant="success">Save</Button>
-        <Button variant="danger">Delete</Button>
-        <Button variant="warning">Update</Button>
-        <Button variant="success">Send</Button>
-        <Button variant="secondary" disabled={true}>
+      <div className="flex flex-wrap gap-4 w-full mt-4">
+        <V2_Button>Learn More</V2_Button>
+        <V2_Button>Get Started</V2_Button>
+        <V2_Button>Create QR Code</V2_Button>
+        <V2_Button>Generate Report</V2_Button>
+        <V2_Button>View in Google Maps</V2_Button>
+        <V2_Button>Share Access</V2_Button>
+        <V2_Button buttonStyle="success">Save</V2_Button>
+        <V2_Button buttonStyle="success">Share on LinkedIn</V2_Button>
+        <V2_Button buttonStyle="success">Copy Invite Link</V2_Button>
+        <V2_Button buttonStyle="success">Export as PDF</V2_Button>
+        <V2_Button buttonStyle="success">Download Image</V2_Button>
+        <V2_Button buttonStyle="success">Send Email</V2_Button>
+        <V2_Button buttonStyle="success">Upload Document</V2_Button>
+        <V2_Button buttonStyle="danger">Delete</V2_Button>
+        <V2_Button buttonStyle="warning">Update</V2_Button>
+        <V2_Button buttonStyle="success">Send</V2_Button>
+        <V2_Button buttonStyle="secondary" disabled={true}>
           Not Allowed
-        </Button>
-        <Button variant="outline">Explore</Button>
-        <Button variant="outline">Read More</Button>
-        <Button variant="outline">View Details</Button>
+        </V2_Button>
+        <V2_Button buttonStyle="outline">Explore</V2_Button>
+        <V2_Button buttonStyle="outline">Read More</V2_Button>
+        <V2_Button buttonStyle="outline">View Details</V2_Button>
       </div>
     </div>
   );
