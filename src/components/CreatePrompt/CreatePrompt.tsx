@@ -1,6 +1,6 @@
 import React from "react";
 import Dropdown from "../Dropdown/Dropdown";
-import V2_Button from "../V2_Button/V2_Button";
+import Button from "../Button/Button";
 
 const CreatePrompt = () => {
   return (
@@ -12,46 +12,44 @@ const CreatePrompt = () => {
       <div className="flex gap-2 item-center mt-8  w-[300px]">
         <Dropdown placeholder="Select Tone" optionsArr={["Formal", "Casual"]} />
       </div>
-
       <div className="mt-8 flex gap-4  w-[300px]">
-        <V2_Button
+        <Button
           size="sm"
-          customClassName="text-[14px] flex-1 px-3 py-1 rounded cursor-pointer bg-blue-500 text-white whitespace-nowrap"
+          className="text-[14px] flex-1 px-3 py-1 rounded cursor-pointer bg-blue-500 text-white whitespace-nowrap"
         >
           Generate Prompt
-        </V2_Button>
-        <V2_Button
+        </Button>
+        <Button
           size="sm"
-          customClassName="text-[14px] flex-1 px-3 py-1 rounded cursor-pointer border border-black hover:bg-black/10 whitespace-nowrap"
+          className="text-[14px] flex-1 px-3 py-1 rounded cursor-pointer border border-black hover:bg-black/10 whitespace-nowrap"
         >
           Save Template
-        </V2_Button>
+        </Button>
       </div>
-
       <div className="flex flex-wrap gap-4 w-full mt-4">
-        <V2_Button>Apply</V2_Button>
-        <V2_Button>Try for Free</V2_Button>
-        <V2_Button>Launch Now</V2_Button>
-        <V2_Button>Start Demo</V2_Button>
-        <V2_Button>Close</V2_Button>
-        <V2_Button>View All</V2_Button>
-        <V2_Button>More Info</V2_Button>
-        <V2_Button>Add Member</V2_Button>
-        <V2_Button>Sign Agreement</V2_Button>
-        <V2_Button buttonStyle="secondary">Discover</V2_Button>
-        <V2_Button buttonStyle="success">Request Access</V2_Button>
-        <V2_Button buttonStyle="secondary">Settings</V2_Button>
-        <V2_Button buttonStyle="outline">Launch</V2_Button>
-        <V2_Button buttonStyle="outline">Accept</V2_Button>
-        <V2_Button buttonStyle="outline">Invite Collaborator</V2_Button>
-        <V2_Button buttonStyle="outline">Switch Account</V2_Button>
-        <V2_Button buttonStyle="outline">View Profile</V2_Button>
-        <V2_Button buttonStyle="danger">Decline</V2_Button>
-        <V2_Button buttonStyle="danger">Remove</V2_Button>
-        <V2_Button buttonStyle="danger">Cancel</V2_Button>
-        <V2_Button buttonStyle="danger">Remove Member</V2_Button>
-        <V2_Button buttonStyle="warning">Contact Support</V2_Button>
-        <V2_Button buttonStyle="warning">Join Team</V2_Button>
+        <Button>Apply</Button>
+        <Button>Try for Free</Button>
+        <Button>Launch Now</Button>
+        <Button>Start Demo</Button>
+        <Button>Close</Button>
+        <Button>View All</Button>
+        <Button>More Info</Button>
+        <Button>Add Member</Button>
+        <Button>Sign Agreement</Button>
+        <Button variant="secondary">Discover</Button>
+        <Button variant="success">Request Access</Button>
+        <Button variant="secondary">Settings</Button>
+        <Button variant="outline">Launch</Button>
+        <Button variant="outline">Accept</Button>
+        <Button variant="outline">Invite Collaborator</Button>
+        <Button variant="outline">Switch Account</Button>
+        <Button variant="outline">View Profile</Button>
+        <Button variant="danger">Decline</Button>
+        <Button variant="danger">Remove</Button>
+        <Button variant="danger">Cancel</Button>
+        <Button variant="danger">Remove Member</Button>
+        <Button variant="warning">Contact Support</Button>
+        <Button variant="warning">Join Team</Button>
       </div>
     </div>
   );
