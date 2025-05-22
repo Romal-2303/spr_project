@@ -1,6 +1,6 @@
 import React from "react";
 import Accordian from "../Accordian/Accordian";
-import V2_Button from "../V2_Button/V2_Button";
+import Button from '../Button/Button';
 
 const FrequentlyAskedQuestion = () => {
   return (
@@ -24,27 +24,26 @@ const FrequentlyAskedQuestion = () => {
           },
         ]}
       />
-
       <div className="flex flex-wrap gap-4 w-full mt-4">
-        <V2_Button>Checkout</V2_Button>
-        <V2_Button>Confirm</V2_Button>
-        <V2_Button>Add to Wishlist</V2_Button>
-        <V2_Button>Compare Prices</V2_Button>
-        <V2_Button>Upgrade Now</V2_Button>
-        <V2_Button>View Cart</V2_Button>
-        <V2_Button>Repeat Order</V2_Button>
-        <V2_Button buttonStyle="success">Apply Coupon</V2_Button>
-        <V2_Button buttonStyle="success">Redeem Points</V2_Button>
-        <V2_Button buttonStyle="success">Select Plan</V2_Button>
-        <V2_Button buttonStyle="success">Checkout as Guest</V2_Button>
-        <V2_Button buttonStyle="success">Track Shipment</V2_Button>
-        <V2_Button buttonStyle="danger">Reject</V2_Button>
-        <V2_Button>Start Free Trial</V2_Button>
-        <V2_Button buttonStyle="warning">Enable</V2_Button>
-        <V2_Button buttonStyle="warning">Disable</V2_Button>
-        <V2_Button buttonStyle="outline">Upload</V2_Button>
-        <V2_Button buttonStyle="warning">Refresh</V2_Button>
-        <V2_Button buttonStyle="warning">Retry</V2_Button>
+        <Button>Checkout</Button>
+        <Button>Confirm</Button>
+        <Button>Add to Wishlist</Button>
+        <Button>Compare Prices</Button>
+        <Button>Upgrade Now</Button>
+        <Button>View Cart</Button>
+        <Button>Repeat Order</Button>
+        <Button variant="success">Apply Coupon</Button>
+        <Button variant="success">Redeem Points</Button>
+        <Button variant="success">Select Plan</Button>
+        <Button variant="success">Checkout as Guest</Button>
+        <Button variant="success">Track Shipment</Button>
+        <Button variant="danger">Reject</Button>
+        <Button>Start Free Trial</Button>
+        <Button variant="warning">Enable</Button>
+        <Button variant="warning">Disable</Button>
+        <Button variant="outline">Upload</Button>
+        <Button variant="warning">Refresh</Button>
+        <Button variant="warning">Retry</Button>
       </div>
     </div>
   );
