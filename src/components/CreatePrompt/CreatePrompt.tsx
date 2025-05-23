@@ -1,6 +1,15 @@
+"use client";
+
 import React from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import V2_Button from "../V2_Button/V2_Button";
+import { Select } from "antd";
+
+let optionsArr = [
+  { value: "jack", label: "Jack" },
+  { value: "lucy", label: "Lucy" },
+  { value: "Yiminghe", label: "yiminghe" },
+];
 
 const CreatePrompt = () => {
   return (
@@ -52,6 +61,10 @@ const CreatePrompt = () => {
         <V2_Button buttonStyle="danger">Remove Member</V2_Button>
         <V2_Button buttonStyle="warning">Contact Support</V2_Button>
         <V2_Button buttonStyle="warning">Join Team</V2_Button>
+      </div>
+
+      <div className="mt-8 w-[300px]">
+        <Select className="w-full" defaultValue="lucy" options={optionsArr} />
       </div>
     </div>
   );
