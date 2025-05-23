@@ -23,7 +23,7 @@ interface SelectProps {
   defaultValue?: string;
 }
 
-export const Select: React.FC<SelectProps> = ({
+const Select: React.FC<SelectProps> = ({
   value,
   onValueChange,
   options,
@@ -86,3 +86,5 @@ export const Select: React.FC<SelectProps> = ({
     </RadixSelect.Root>
   );
 };
+
+export default Select;

@@ -3,15 +3,16 @@
 import React from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import V2_Button from "../V2_Button/V2_Button";
-import { Select } from "antd";
+import Select from '@/components/Select/Select';
 
 let optionsArr = [
-  { value: "jack", label: "Jack" },
-  { value: "lucy", label: "Lucy" },
-  { value: "Yiminghe", label: "yiminghe" },
+  { valueSelect: "jack", labelSelect: "Jack" },
+  { valueSelect: "lucy", labelSelect: "Lucy" },
+  { valueSelect: "Yiminghe", labelSelect: "yiminghe" },
 ];
 
 const CreatePrompt = () => {
+  const [value, setValue] = React.useState('react');
   return (
     <div className="flex flex-col p-4">
       <div className="flex flex-col  w-[300px]">
@@ -21,7 +22,6 @@ const CreatePrompt = () => {
       <div className="flex gap-2 item-center mt-8  w-[300px]">
         <Dropdown placeholder="Select Tone" optionsArr={["Formal", "Casual"]} />
       </div>
-
       <div className="mt-8 flex gap-4  w-[300px]">
         <V2_Button
           size="sm"
@@ -36,7 +36,6 @@ const CreatePrompt = () => {
           Save Template
         </V2_Button>
       </div>
-
       <div className="flex flex-wrap gap-4 w-full mt-4">
         <V2_Button>Apply</V2_Button>
         <V2_Button>Try for Free</V2_Button>
@@ -62,9 +61,13 @@ const CreatePrompt = () => {
         <V2_Button buttonStyle="warning">Contact Support</V2_Button>
         <V2_Button buttonStyle="warning">Join Team</V2_Button>
       </div>
-
       <div className="mt-8 w-[300px]">
-        <Select className="w-full" defaultValue="lucy" options={optionsArr} />
+        <Select
+          value={value}
+          defaultValue='lucy'
+          options={optionsArr}
+          onValueChange={setValue}
+          placeholder='Choose a framework' />
       </div>
     </div>
   );
