@@ -3,21 +3,13 @@
 import React, { useState } from "react";
 import { Switch } from "@radix-ui/themes";
 import V2_Button from "../V2_Button/V2_Button";
-import { Modal } from "antd";
+import Modal from "@/components/Modal/Modal";
 
 const Settings = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
     setIsModalOpen(true);
-  };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
   };
 
   return (
@@ -49,7 +41,6 @@ const Settings = () => {
           Reset App Data
         </V2_Button>
       </div>
-
       <div className="flex flex-wrap gap-4 w-full mt-4">
         <V2_Button>Register</V2_Button>
         <V2_Button>Update Preferences</V2_Button>
@@ -71,19 +62,15 @@ const Settings = () => {
         <V2_Button buttonStyle="success">Add to Cart</V2_Button>
         <V2_Button buttonStyle="outline">Buy Now</V2_Button>
       </div>
-
       <Modal
-        title="Basic Modal"
-        closable={{ "aria-label": "Custom Close Button" }}
         open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
+        onOpenChange={() => setIsModalOpen((prevState) => !prevState)}
+        className="px-2"
       >
         <p>Some contents...</p>
         <p>Some contents...</p>
         <p>Some contents...</p>
       </Modal>
-
       {/* <Modal
         open={isModalOpen}
         onOpenChange={() => setIsModalOpen((prevState) => !prevState)}
